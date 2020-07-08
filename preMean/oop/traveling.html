@@ -1,6 +1,14 @@
-// Pointers: Imagine that we're building a game for children. They may wander the Hundred Acre Wood and interact with Winnie the Pooh and other characters. Let's draw a map of where the different characters live in the Hundred Acre Wood.
-var tigger = { character: "Tigger" };
-    var pooh = { character: "Winnie the Pooh" };
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var tigger = { character: "Tigger"};
+    var pooh = { character: "Winnie the Pooh"};
     var piglet = { character: "Piglet"}; 
     var bees = { character: "Bees"};
     var owl = { character: "Owl"};
@@ -47,7 +55,22 @@ var tigger = { character: "Tigger" };
 
     heffalumps.west=kanga.north;
 
+    var player = {
+        location: tigger
+    }
+    // console.log(player.location.character)
 
-
-
-
+    function move(direction){
+        if(player.location[direction]==null){
+            console.log('You may not got that way!')
+        }
+        else{
+        console.log("You are now at " + player.location[direction].character+"'s house")
+        player = {
+            location: player.location[direction]
+        }
+    }
+    }
+    </script>
+</body>
+</html>

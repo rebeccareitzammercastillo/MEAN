@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var tigger = { 
+        character: "Tigger", 
+        // north: pooh,        // assuming that pooh is an object that has already been declared
+        greet: function(){
+            console.log("The wonderful thing about Tiggers is Tiggers are wonderful things!");
+            }
+    };
+    var pooh = { 
+        character: "Winnie the Pooh",
+        // south: tigger,
+        greet: function(){
+            console.log("Oh bother.");
+        }
+    };
+    var piglet = { 
+        character: "Piglet",
+        greet: function(){
+        console.log("Oh d-d-d-d-dear! I wasn't expecting company!");
+        }
+    }; 
+    var bees = { 
+        character: "Bees",
+        greet: function(){
+        console.log("Buuuuuuuuuuuuuzzzzzzzzzzzzzzzz");
+        }
+    };
+    var owl = { 
+        character: "Owl",
+        greet: function(){
+        console.log("who, who, who's there?");
+        }
+    };
+    var chris = { 
+        character: "Christopher Robin",
+        greet: function(){
+        console.log("Who is ready for an adventure?");
+        }
+    };
+    var rabbit = { 
+        character: "Rabbit",
+        greet: function(){
+        console.log("It's a hippity, hoppity kind of day!");
+        }
+    };
+    var gopher = { 
+        character: "Gopher",
+        greet: function(){
+        console.log("Well hello, there!");
+        }
+    };
+    var kanga = { 
+        character: "Kanga",
+        greet: function(){
+        console.log("Hi, I am Kanga!");
+        }
+    };
+    var eeyore = { 
+        character: "Eeyore",
+        greet: function(){
+        console.log("It's a gloomy day. Then again everyday is gloomy.");
+        }
+    };
+    var heffalumps = { 
+        character: "Heffalumps",
+        greet: function(){
+        console.log("Yup, you heard that right! The name is Heffalumps!");
+        }
+    };
+
+
+    tigger.north = pooh;
+
+    pooh.south = tigger;
+    pooh.east=bees;
+    pooh.west=piglet;
+    pooh.north=chris;
+
+    piglet.east = tigger.north;      
+    piglet.north=owl;
+
+    owl.east=pooh.north;
+    owl.south=pooh.west;
+
+    chris.north=kanga;
+    chris.east=rabbit;
+    chris.west=piglet.north;
+    chris.south=tigger.north;
+
+    rabbit.east=gopher;
+    rabbit.west=pooh.north;
+    rabbit.south=pooh.east;
+
+    bees.west=tigger.north;
+    bees.north=chris.east;
+
+    gopher.west=chris.east;
+
+    kanga.north=eeyore;
+    kanga.south=pooh.north;
+
+    eeyore.east=heffalumps;
+    eeyore.south=chris.north;
+
+    heffalumps.west=kanga.north;
+
+    var player = {
+        location: tigger
+    }
+    // console.log(player.location.character)
+
+    function move(direction){
+        if(player.location[direction]==null){
+            console.log('You may not got that way!')
+        }
+        else{
+        console.log("You are now at " + player.location[direction].character+"'s house")
+        player = {
+            location: player.location[direction]
+        }
+        player.location.greet();
+    }
+    }
+    </script>
+</body>
+</html>
