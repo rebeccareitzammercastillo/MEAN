@@ -1,0 +1,11 @@
+<table class="table">
+    <tbody>
+        <tr *ngFor="let note of allNote">
+            <td>{{note.note}}</td>
+            <!-- <td>{{note.createdAt}}</td> -->
+            <td>Noted on: {{strftime(note.createdAt)}}</td>
+
+        </tr>
+    </tbody>
+</table>
+

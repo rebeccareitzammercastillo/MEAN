@@ -1,0 +1,11 @@
+<a [routerLink]="['/']">Home</a>
+<p>Add a new author:</p>
+<form (submit)="createAuthorFromService()">
+    <div class="form-group">
+        <!-- <p> {{ newTask | json }} </p> -->
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="name" [(ngModel)]="newAuthor.name"  placeholder="Name"> 
+    </div>
+    <a href="/" class="btn btn-info">Cancel</a>
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>

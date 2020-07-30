@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    <%if(errors){%>
+        <p style="color:red";><%= errors%> </p>
+    <%}%>
+    <h1>Dojo Message Board</h1>
+    <hr>
+    <h3></h3>Add a Message:</h3>
+    <form action="/messages" method="post">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Your Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Your Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1"></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+<hr>
+<%for( var msg of messages) {%>
+    <h2> Name: <%= msg.name%></h2>
+    <h2>Message: <%=msg.message%></h2>
+    <h1>Comments:</h1>
+    <%for(var cmt of msg.comments){%>
+    <h4><strong><%=cmt.name%></strong>: <%=cmt.comment%></h4>
+    <hr>
+    <%}%>
+    <h3>Leave a Comment:</h3>
+    <form action="/messages/<%=msg._id%>/comments" method="post">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Your Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Your Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1"></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+    <hr>
+<%}%>
+</body>
+</html>

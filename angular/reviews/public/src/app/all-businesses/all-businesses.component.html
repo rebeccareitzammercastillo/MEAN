@@ -1,0 +1,24 @@
+<table class="table table-light">
+    <thead>
+        <tr>
+            <th scope="col">Business Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Description</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let business of businesses">
+            <th scope="row">{{business.name}}</th>
+            <td>{{business.address}}</td>
+            <td>{{business.description}}</td>
+            <td>
+                <!-- <button [routerLink]="['reviews', business._id]" >Reviews</button> -->
+                <button [routerLink]="['reviews', business._id]">Reviews</button>
+                <button [routerLink]="['edit', business._id]">Edit</button>
+                <button (click)="deleteBusinessesFromService(business._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+    

@@ -1,0 +1,36 @@
+<h1>Bicycle Marketplace</h1>
+<div class="card mb-20">
+  <div class="card-body">
+    <h5 class="card-title">Bike of the Day!</h5>
+    <img src="..." class="card-img-top" alt="image">
+    <p class="card-text" name="title"></p>
+    <p class="card-text" name="description"></p>
+    <p class="card-text" name="price"></p>
+    <p class="card-text" name="location"></p>
+    <a type class="btn btn-primary">Button</a>
+  </div>
+</div>
+
+
+
+
+<router-outlet></router-outlet>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Anonymous Notes</h1>
+  <form (submit)="createNotesFromService()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Note:</label>
+      <input type="text" name="note" class="form-control" id="exampleInputEmail1" [(ngModel)]="newNote.note">
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+  <hr>
+  <app-notes [allNote]="notes"></app-notes>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

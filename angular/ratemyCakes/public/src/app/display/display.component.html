@@ -1,0 +1,4 @@
+<h1>Baked by {{unoCake.name}}</h1>
+<img src="{{unoCake.image}}" alt="" width="200px" height="250px">
+<p>Average Rating: {{rank()}}</p>
+<p *ngFor="let comment of unoCake.comments">{{comment.rating}} - {{comment.comment}} </p>

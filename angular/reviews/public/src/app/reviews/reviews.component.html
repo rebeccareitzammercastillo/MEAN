@@ -1,0 +1,20 @@
+<h1>{{oneBusiness.name}} review's {{avg()}}</h1>
+<button (click)="clicked()">Add a Review</button>
+<app-create-review *ngIf="reviewClicked" [business]="businessDeet"></app-create-review>
+    
+    <table *ngIf="oneBusiness.reviews.length>0" class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">review</th>
+                <th scope="col">rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let review of oneBusiness.reviews">
+                <td>{{review.review}}</td>
+                <td>{{review.rating}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <router-outlet></router-outlet>

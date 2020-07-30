@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Rate my Cakes</h1>
+  <form class="rateCake" (submit)="createCakesFromService()">
+    <p>Submit a cake to be rated</p>
+    <hr>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Baker name:</label>
+      <input type="text" name="name" class="form-control" id="exampleInputEmail1" [(ngModel)]="newCake.name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Image url:</label>
+      <input type="text" name="image" class="form-control" id="exampleInputEmail1" [(ngModel)]="newCake.image">
+    </div>
+    
+    <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+  <hr>
+  <app-display *ngIf="cakeClicked" [unoCake]="cakeDeet"></app-display>
+    </div>
+
+    <div class="col cakeRate">
+      <div *ngFor="let cake of cakes">
+        <img (click)='showCakeFromService(cake._id)' src="{{cake.image}}" alt="cake pic" width="200" height="250">
+        <form (submit)="createCommentsFromService($event, cake._id)">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Rating</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="rating">
+              <option [value]="1">1 Stars</option>
+              <option [value]="2">2 Stars</option>
+              <option [value]="3">3 Stars</option>
+              <option [value]="4">4 Stars</option>
+              <option [value]="5">5 Stars</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Leave a comment:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
+            <button type="submit" class="btn btn-info">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+<p>Add a new business listing:</p>
+<form *ngIf="oneBusiness" (submit)="editBusinessesFromService(business)">
+    <div class="form-group">
+        <!-- <p> {{ newTask | json }} </p> -->
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="name" [(ngModel)]="oneBusiness.name" > 
+        <label for="exampleInputEmail1">Address</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="address" [(ngModel)]="oneBusiness.address"  placeholder="Address"> 
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name= "description" [(ngModel)]="oneBusiness.description"></textarea>
+        </div>
+    </div>
+    <a href="/" class="btn btn-info">Cancel</a>
+    <button type="submit" class="btn btn-info">Update</button>
+</form>
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Poodle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <h1><%=poodles.name%>'s  Information</h1>
+    <h3>Color: <%=poodles.color%></h3>
+    <h3>Age: <%=poodles.age%></h3>
+    <a class="btn btn-info" href="/">Home</a>
+    <a class="btn btn-info" href="/poodles/edit/<%=poodles._id%>">Edit</a>
+</body>
+</html>

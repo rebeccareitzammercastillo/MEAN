@@ -1,0 +1,10 @@
+body{
+    margin: 0 auto;
+    padding: 20px;
+}
+h1{
+    color: lightcoral;
+}
+form{
+    display: inline-block;
+}

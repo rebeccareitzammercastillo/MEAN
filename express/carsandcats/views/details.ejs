@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Detail Page for <%= cats.name %></h1>
+    <img src="images/<%=cats.image%>.png"" alt="cat1" width="600">
+    <h2>Favorite Food: <%= cats.fave_food %></h2>
+    <h2>age: <%= cats.age %></h2>
+    <h2>Favorite Toy: <%= cats.fave_toy %></h2>
+    <% for(var i=0;i<cats.fave_toy.length; i++) {%>
+            <%= cats.favetoy %>
+    <%}%>
+</body>
+</html>
+

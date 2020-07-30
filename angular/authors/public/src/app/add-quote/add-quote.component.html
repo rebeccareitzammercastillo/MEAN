@@ -1,0 +1,11 @@
+<p *ngIf="oneRestaurant"> Provide a quote by {{oneAuthor.name}}</p> 
+
+<p>Quote:</p>
+<form *ngIf="oneAuthor" (submit)="addQuoteFromService()">
+    <div class="form-group">
+        <!-- <p> {{ newTask | json }} </p> -->
+        <input type="text" class="form-control" id="exampleInputEmail1" name="text" [(ngModel)]="newQuote">
+    </div>
+    <button [routerLink]="['show', oneAuthor._id]" class="btn btn-info">Cancel</button>
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>

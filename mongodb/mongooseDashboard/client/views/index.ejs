@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Poodles</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    <a class="btn btn-info" href="/poodles/new">Add a Poodle</a>
+    <hr>
+    <%for( var poodle of poodles) {%>
+        <a href="/poodles/<%=poodle._id%>"><h3>"<%= poodle.name%>"</h3></a>
+        <p><%=poodle.color%></p>
+        <p><%=poodle.age%></p>
+        <a class="btn btn-info" href="/poodles/edit/<%=poodle._id%>">Edit</a>
+        <a type="submit" class="btn btn-info" href="/poodles/destroy/<%=poodle._id%>">Delete</a>
+        <hr>
+        <%}%>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div *ngIf="oneAuthor">
+<a [routerLink]="['/']">Home</a> <br>
+<a [routerLink]="['/write', oneAuthor._id]">Add a quote</a>
+
+<p>Quotes by {{oneAuthor.name}}</p>
+
+<table *ngIf="oneAuthor.quotes.length>0" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Quote</th>
+            <th scope="col">Votes</th>
+            <th scope="col">Actions Available</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let quote of oneAuthor.quotes">
+            <td>{{quote.text}}</td>
+            <td>{{quote.votes}}</td>
+            <td>
+                <button >Up Vote</button>
+                <button >Down Vote</button>
+                <button (click)="deleteQuoteFromService(oneAuthor._id, quote._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<router-outlet></router-outlet>

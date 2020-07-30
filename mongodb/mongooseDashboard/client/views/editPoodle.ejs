@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a Poodle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <a class="btn btn-info" href="/">Home</a>
+    <h1>Edit <%= poodles.name%></h1>
+    <form action="/poodles/<%=poodles._id%>" method="post">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Poodle Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value=<%=poodles.name%>>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Poodle Color</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="color" value=<%=poodles.color%>>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Poodle Age</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="age" value=<%=poodles.age%>>
+        </div>
+        <button type="submit" class="btn btn-info">Edit Poodle</button>
+    </form>
+</body>
+</body>
+</html>
